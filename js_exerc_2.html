@@ -15,14 +15,36 @@
 // saldo positivo ou negativo, seguido do valor do saldo.
 
     let family = {
-
-
-      revenues: [3700, 2500, 700,],
-      expenses: [200, 1010, 800, 500],
+      revenues: [3700, 2500, 700,500],
+      expenses: [200, 1010, 800, 500,349,2003, 702],
     }
-    console.log()
-
+      
     
+      function sum(array) {
+        let totalValue = 0; 
+
+        for(let value of array) {
+          totalValue += value;
+        }
+        return totalValue
+      }
+      
+      function calculateBalance(){
+        const valueRevenues = sum(family.revenues)
+        const valueExpenses = sum(family.expenses)
+
+        const balance = valueRevenues-valueExpenses;
+
+       if(balance >= 0) {
+        console.log(`Seu saldo é positivo de R$${balance}`)
+       } else {
+        (console.log(`Seu saldo é negativo R$${balance}. `))
+      } 
+      
+      }
+    
+      calculateBalance()
+     
   </script>  
 </body>
 </html>
