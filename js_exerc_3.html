@@ -12,12 +12,39 @@
     // C = (F - 32) * 5/9 
     // F = C * 9/5 + 32
 
-    function convertion () {
-    
-    }
+    // let F = 200
+    // let C = (F-32) * 5/9
+    // 
+
+    // for(let i = 0; i < string.lenght;   )
 
     
-    convertion('234F')
+    function verifyDegree(string) {
+       string = string.toUpperCase ();
+       
+
+        for(let i = 0; i <= string.length; i++){
+            if(string[i] == 'C') {
+                string = string.slice(0,-1)
+                string = (Number(string)*9/5 + (32))
+                
+                console.log(Number(string))
+ 
+            } else if(string[i] == 'F') {
+                string = string.slice(0,-1)
+                string = (Number(string)-32) * 5/9
+                console.log(string)
+            } 
+
+            }
+
+            return 
+        }
+       
+    
+    verifyDegree('230F')
+
+    
     </script>
 </body>
 </html>
