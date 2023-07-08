@@ -20,50 +20,44 @@
 
     
     function verifyDegree(string) {
-       string = string.toUpperCase ();
-       
-        for(let i = 0; i <= string.length; i++){
-            if(string[i] == 'C') {
-                string = string.slice(0,-1)
-                string = (Number(string)*9/5 + (32))
-                
-                console.log(Number(string))
- 
-            } else if(string[i] == 'F') {
-                string = string.slice(0,-1)
-                string = (Number(string)-32) * 5/9
-                console.log(string)
-            } else if (string[i] == '') {
-                console.log('Erro! É necessário delcarar o medida de temperatura')
-            }
+    string = string.toUpperCase();
 
-            }
-
-            return
-
+    try {
+        if (string === "") {
+            throw ("Campo vazio");
         }
-        
-         try {
-             if(string[i] == 'C') {
-                 string = string.slice(0,-1)
-                 string = (Number(string)*9/5 + (32))
-                
-                 console.log(Number(string))
- 
-             } else if(string[i] == 'F') {
-                 string = string.slice(0,-1)
-                 string = (Number(string)-32) * 5/9
-                 console.log(string)
-             } else if ( string[i] !== 'F' && string[i] !== 'C') {
-                        throw 'Medida inválida'
-             }
 
-         } catch(e) {
-            console.log (e)
+        for (let i = 0; i < string.length; i++) {
+            if (string[i] == 'C') {
+                string = string.slice(0, -1);
+                string = Number(string) * 9 / 5 + 32;
+
+                console.log(Number(string));
+
+            } else if (string[i] == 'F') {
+                string = string.slice(0, -1);
+                string = (Number(string) - 32) * 5 / 9;
+                console.log(string);
+
+            } else if (string === NaN) {
+                console.log('errorrasdj')
+
+            } else if (string[i] !== 'F' && string[i] !== 'C') {
+                throw (`Repita a operação com medida de temperatura válida (C ou F). Você digitou ${string}`);
+            } 
             
-         }
-    
-            verifyDegree('3948H')
+            
+        }
+
+    } catch (e) {
+        console.log(e);
+    }
+
+    return;
+}
+
+verifyDegree('374r7');
+
 
      // 1. Erro para quando não é colocado nenhuma letra 
     // 2. erro para quando é colocado letras no meio da valor
