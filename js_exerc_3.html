@@ -7,18 +7,6 @@
 </head>
 <body>
     <script>
-    // Crie uma função que receba uma string em celsius ou fahrenheit
-    // e faça a transformação de uma unidade para outra 
-    // C = (F - 32) * 5/9 
-    // F = C * 9/5 + 32
-
-    // let F = 200
-    // let C = (F-32) * 5/9
-    // 
-
-    // for(let i = 0; i < string.lenght;   )
-
-    
     function verifyDegree(string) {
     string = string.toUpperCase();
 
@@ -45,23 +33,16 @@
             } else if (string[i] !== 'F' && string[i] !== 'C') {
                 throw (`Repita a operação com medida de temperatura válida ao final (C ou F). Você digitou ${string}`);
             } 
-            
-            
         }
 
     } catch (e) {
         console.log(e);
     }
-
     return;
 }
 
-verifyDegree('37Y8');
-
-
-     // 1. Erro para quando não é colocado nenhuma letra 
-    // 2. erro para quando é colocado letras no meio da valor
-   // 3. 
+verifyDegree('');
+        
    </script>
 </body>
 </html>
