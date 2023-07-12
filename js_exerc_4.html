@@ -53,15 +53,34 @@ const booksByCategory = [
     },
 ];
 
-    // const amountOfCategory = booksByCategory.length
-    // console.log(amountOfCategory)
+    //  const amountOfCategory = booksByCategory.length
+    //  console.log(`São ${amountOfCategory} categorias`)
 
-    for( let amount of booksByCategory) {
+    for( let category of booksByCategory) {
 
-        console.log('Total de livros em ', amount.category) 
-        console.log(amount.books.length)
-    }
-        
+        console.log('Total de livros em ',category.category) 
+        console.log(category.books.length)
+
+}
+
+        // function countAuthors () {
+            let authors = [
+
+            ];
+
+            for( let category of booksByCategory) {
+                 
+                for( let books of category.books) {
+                    // if(authors.indexOf(books.author) == -1)
+                    authors.push(books.author)
+                    console.log(authors)
+            }
+                
+            }
+            //}
+
+            
+       
 
         
 
