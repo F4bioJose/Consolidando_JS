@@ -7,14 +7,6 @@
 </head>
 <body>
     <script>
-        /* 
-    ∞ Buscando e contando dados em Arrays ∞
-    Baseado no Array de Livros por Categoria abaixo, faça os seguintes desafios
-        • Contar o número de categorias e o número de livros em cada categoria
-        • Contar o número de autores
-        • Mostrar livros do autor Augusto Cury
-        • Transformar a função acima em uma função que irá receber o nome do autor e devolver os livros desse autor.
-*/
 
 const booksByCategory = [
     {
@@ -53,42 +45,66 @@ const booksByCategory = [
     },
 ];
 
-    //  const amountOfCategory = booksByCategory.length
-    //  console.log(`São ${amountOfCategory} categorias`)
+    /* 
+    ∞ Buscando e contando dados em Arrays ∞
+    Baseado no Array de Livros por Categoria abaixo, faça os seguintes desafios
+        • Contar o número de categorias e o número de livros em cada categoria
+        • Contar o número de autores
+        • Mostrar livros do autor Augusto Cury
+        • Transformar a função acima em uma função que irá receber o nome do autor e devolver os livros desse autor.
+    */
 
     for( let category of booksByCategory) {
 
         console.log('Total de livros em ',category.category) 
         console.log(category.books.length)
 
-}
+    }
 
-        // function countAuthors () {
-            let authors = [
+    function countAuthors () {
+    let authors = [];
 
-            ];
-
-            for( let category of booksByCategory) {
+        for( let category of booksByCategory) {
                  
-                for( let books of category.books) {
-                    // if(authors.indexOf(books.author) == -1)
-                    authors.push(books.author)
-                    console.log(authors)
+            for( let book of category.books) {
+
+                if(authors.indexOf(book.author) == -1) {
+                    authors.push(book.author)
+
+                    
+                }     
             }
+        }
+        console.log(`O total de autores é ${authors.length}`)
+    }
+
+    countAuthors();
+
+    
+        for( let category of booksByCategory){
+            for( let book of category.books ) {
+                if(book.author == 'Augusto Cury') {
+                 console.log(book.title)
+                }
+            }
+        }
+    
+
+
+    function bookByAuthorsName (string) {
+     
+         for( let category of booksByCategory){
+            for( let book of category.books ) {
+                if (string == book.author) {
+                    console.log(book.title)
+                }
                 
             }
-            //}
-
-            
-       
-
-        
-
+        }
+       return 
+    }
     
-    
-   
-
-
+    bookByAuthorsName('')
 
     </script>
 </body>
